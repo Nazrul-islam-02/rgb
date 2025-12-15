@@ -1,0 +1,12 @@
+.color_box{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#div_value{
+    color: white;
+    text-align: center;
+}
