@@ -1,8 +1,15 @@
 
-const button1 = document.getElementById("click_me_1");
-const button2 = document.getElementById("click_me_2");
-const button3 = document.getElementById("click_me_3");
+const range_value_R = document.getElementById("range_value_R");
+const range_value_G = document.getElementById("range_value_G");
+const range_value_B = document.getElementById("range_value_B");
 const color = document.getElementById("color");
+// const range_value = document.getElementById("range_value");
+
+// console.log(range_value);
+
+// range_value.addEventListener("input",()=>{
+//     console.log(range_value.value)
+// })
 
 // console.log(color)
 
@@ -16,25 +23,29 @@ child.style.textAlign = "center";
 color.appendChild(child);
 
 
-button1.addEventListener("click",()=>{
-    r = r + 10;
+range_value_R.addEventListener("input",()=>{
+    r = range_value_R.value;
     colorChage(r,g,b);
     rgbValue(r,g,b);
+    fontColor(r,g,b);
     if( r>255 ) r = 0;
 })
 
-button2.addEventListener("click",()=>{
-    g= g + 20;
+range_value_G.addEventListener("input",()=>{
+    g = range_value_G.value;
     colorChage(r,g,b);
     rgbValue(r,g,b);
+    fontColor(r,g,b);
     if( g>255 ) g = 0;
 })
-
-button3.addEventListener("click",()=>{
-    b=b+20;
+range_value_B.addEventListener("input",()=>{
+    b = range_value_B.value;
     colorChage(r,g,b);
     rgbValue(r,g,b);
+    fontColor(r,g,b);
     if( b>255 ) b = 0;
+
+    // range_value_B.style.backgroundColor = `rgb(0,0,${range_value_B.value})`;
 })
 
 function colorChage(r,g,b){
@@ -44,6 +55,11 @@ function colorChage(r,g,b){
 function rgbValue(r,g,b){
     console.log(child);
     child.innerText = `rgb(${r} ${g} ,${b})`
+}
+
+
+function fontColor(r,g,b){
+    child.style.color = `rgb(${255 - r}, ${255 - g}, ${255 - b})`
 }
 
 // console.log(count);
